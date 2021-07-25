@@ -19,6 +19,10 @@ overridden to build a custom website: overriding functionality as required, whil
   
 All PRs should be opened against this reference repository and/or the [datinglibre-app-bundle](https://github.com/datinglibre/datinglibre-app-bundle).
 
+## Security
+
+[Supported versions](https://github.com/datinglibre/DatingLibre/blob/master/SECURITY.md) of the `datinglibre-app-bundle`.
+
 ## Documentation
 
 [User guide](https://github.com/datinglibre/DatingLibre/wiki#user-guide).
