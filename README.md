@@ -29,7 +29,7 @@ All PRs should be opened against this reference repository and/or the [datinglib
 
 [Developer guide](https://github.com/datinglibre/DatingLibre/wiki#developer-guide). Start with the [Development](https://github.com/datinglibre/DatingLibre/wiki/Development) section to set up the project on a local machine.
 
-[Upgrading](https://github.com/datinglibre/DatingLibre/blob/master/UPGRADING.md).
+[Upgrading](https://github.com/datinglibre/datinglibre-app-bundle/blob/master/UPGRADING.md).
 
 ## Features
 
