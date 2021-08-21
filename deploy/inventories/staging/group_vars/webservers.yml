@@ -4,6 +4,12 @@ database_root_certificate_path: /home/datinglibre/.postgresql/root.crt
 purge_users_parameters: NOT_ENABLED 24
 purge_user_archives_parameters: 30
 app_secret: replacethissecret
+php_fpm_pm: dynamic
+php_fpm_pm_start_servers: 2
+php_fpm_pm_min_spare_servers: 2
+php_fpm_pm_max_spare_servers: 4
+php_fpm_pm_max_children: 8
+php_fpm_pm_max_requests: 500
 postgres_port: 5432
 pgbouncer_port: 6543
 psql_direct_connection: psql "sslmode=verify-ca sslrootcert={{ database_root_certificate_path }} password={{ database_password }} dbname=datinglibre host={{ database_host }} port={{ postgres_port }}"

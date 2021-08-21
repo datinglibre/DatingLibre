@@ -52,6 +52,22 @@
     - { regexp: "^listen.owner = www-data", line: "listen.owner = datinglibre" }
   notify: restart php-fpm
 
+- name: Set PHP FPM pool sizes
+  become: true
+  lineinfile:
+    dest: /etc/php/7.4/fpm/pool.d/www.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+    state: present
+  with_items:
+    - { regexp: "^pm = ", line: "pm = {{ php_fpm_pm }}" }
+    - { regexp: "^pm.max_children", line: "pm.max_children = {{ php_fpm_pm_max_children }}" }
+    - { regexp: "^pm.start_servers", line: "pm.start_servers = {{ php_fpm_pm_start_servers }}" }
+    - { regexp: "^pm.min_spare_servers", line: "pm.min_spare_servers = {{ php_fpm_pm_min_spare_servers }}" }
+    - { regexp: "^pm.max_spare_servers", line: "pm.max_spare_servers = {{ php_fpm_pm_max_spare_servers }}" }
+    - { regexp: "^;?pm.max_requests", line: "pm.max_requests = {{ php_fpm_pm_max_requests }}" }
+  notify: restart php-fpm
+
 - meta: flush_handlers
 
 - name: Create datinglibre directory
